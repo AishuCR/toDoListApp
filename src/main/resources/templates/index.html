@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<!-- Bootstrap link -->
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+
+<!-- Custom stylesheet -->
+<link rel="stylesheet" type="text/css" href="style.css">
+
+<title>ToDoApp</title>
+
+</head>
+<div th:replace="fragments/nav :: navbar"></div>
+
+<body class="container">
+
+	<form th:object="${toDoList}" th:action="@{/}" th:method="post">
+		<div class="card">
+			<h1 class="card-header">
+				Enter the Title for your To Do List: 
+				<input type="text" th:field="*{title}">
+			</h1>
+
+			<h3 class="card-body">
+				Enter the Content for your To Do List: 
+				<input type="text" th:field="*{content}" id="contentArea">
+			</h3>
+			<br>
+			<button id="addButton" type="submit" value="submit">Add</button>
+		</div>
+
+	</form>
+
+</body>
+</html>

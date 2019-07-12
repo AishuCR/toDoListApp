@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<!-- Bootstrap link -->
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+<!-- Custom style sheet -->
+<link rel="stylesheet" type="text/css" href="style.css">
+
+<title>ToDoApp</title>
+
+</head>
+
+<div th:replace="fragments/nav :: navbar"></div>
+<body class="container">
+
+		<h1>All the to do List</h1>
+
+		<div class="card">
+
+			<ul th:each="toDoList: ${entireList}">
+
+				<li class="card-header"><Span>Title: </Span> <span
+					th:text="${toDoList.title}"></span></li>
+
+				<li class="card-body"><Span>Content: </Span> <span
+					th:text="${toDoList.content}"></span></li>
+
+			</ul>
+
+		</div>
+		
+		<button class="btn btn-success" type="submit" value="update">Update</button>
+
+		<button class="btn btn-danger" type="submit" value="delete">Delete</button>
+
+</body>
+
+</html>

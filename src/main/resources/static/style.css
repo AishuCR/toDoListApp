@@ -1,0 +1,14 @@
+body {
+	margin: 5%;
+}
+
+#contentArea {
+	height: 100px;
+	width: 100%;
+}
+
+#addButton {
+	background-color: #6a1b9a;
+	color: white;
+	font-size: 26px;
+}
